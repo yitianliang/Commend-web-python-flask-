@@ -1,0 +1,16 @@
+
+.log{
+    width: 80px;
+}
+
+.main{
+    background: antiquewhite;
+    width: 730px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.page-title{
+    text-align: center;
+}

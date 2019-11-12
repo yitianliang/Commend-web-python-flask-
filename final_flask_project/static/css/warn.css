@@ -1,0 +1,12 @@
+.body-container{
+    overflow: hidden;
+}
+
+.informs{
+    width: 560px;
+    margin: 20px;
+    padding: 5px;
+    border: 1px;
+    border-radius: 5px;
+    overflow: hidden;
+}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}search{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'css/index.css') }}">
+{% endblock %}
+
+
+
+{% block main %}
+        <ul class="box-control">
+            {% for question in questions %}
+                <li>
+                    <div class="avatar-group">
+                        <img src="{{ url_for('static',filename = question.author.image_path) }}" alt="" class="avatar">
+                    </div>
+                    <div class="question-group">
+{#                        # url_for这一部分，后面的question_id是从questions里调取出Question.id的方法同时返回给后端的参数#}
+                        <div class="question-title"><a href="{{ url_for('detail',question_id = question.id) }}">{{ question.title }}</a></div>
+                        <div class="question-content">{{ question.content | safe}}</div>
+                        <div class="question-info">
+                            <span class="question-author">{{ question.author.username }}</span>
+                            <span class="question-time">{{ question.create_time }} </span>
+                        </div>
+                    </div>
+                 </li>
+            {% endfor %}
+    </ul>
+
+{% endblock %}

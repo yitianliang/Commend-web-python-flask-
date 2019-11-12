@@ -1,0 +1,52 @@
+.question-info{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.question-info span{
+    padding-right: 20px;
+}
+
+.control{
+    width: 600px;
+    margin: 0 auto;
+}
+
+.command-list{
+    padding-left: 0px;
+}
+
+.command-list li{
+    list-style: none;
+    border-bottom: 1px solid #000000;
+    padding-top: 10px;
+}
+
+.avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 80%;
+}
+
+.user-info{
+    font-size: 16px;
+    color: #0db0bb;
+    line-height: 40px;
+}
+
+.user-info .user-name{
+    margin-left: 20px;
+}
+
+.user-info .create-time{
+    float: right;
+}
+
+.answer-content{
+    margin-left: 65px;
+}
+
+.question-content{
+    width: 600px;
+    margin: 0 auto;
+}

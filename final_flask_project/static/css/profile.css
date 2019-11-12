@@ -1,0 +1,52 @@
+
+.form_control {
+    max-width: 710px;
+    padding: 0 15px;
+    margin: 0 auto;
+    width:100%;
+}
+
+.avatar-group{
+    width: 200px;
+    float: left;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.avatar-group .avatar{
+    width: 170px;
+    height: 100%;
+}
+
+.user_info {
+    float: left;
+    width: 200px;
+    margin-right: 20px;
+    padding-left: 20px;
+    border: 1px solid black;
+    border-radius: 15%;
+    box-sizing: border-box;
+}
+
+.user-info div{
+    width: 200px;
+}
+
+.info_change {
+    padding-left: 20px;
+    float: left;
+    width: 200px;
+    border-radius: 15%;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.button_control{
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.change_password{
+    margin-bottom: 20px;
+}

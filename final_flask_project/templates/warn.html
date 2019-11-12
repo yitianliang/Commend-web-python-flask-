@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}warn{% endblock %}
+
+{% block head %}
+    <script src="{{ url_for('static', filename = 'js/warn.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/warn.css') }}">
+{% endblock %}
+
+{% block main %}
+
+<div class="informs">
+    <h4>Information remaining</h4>
+    <p>
+        <span class="key-message">Not Found</span>,
+        After <span id="timer">5</span> seconds jump to homepage。
+    </p>
+    <div class="jump-button">
+        <button type="submit" class="btn btn-default pull-right" onclick="location='{{ url_for('index') }}'">Jump now</button>
+    </div>
+</div>
+<script type="text/javascript">timetojump(5,"{{ url_for('index') }}");</script>
+{% endblock %}

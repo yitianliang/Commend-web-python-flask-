@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}detail{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'css/detail.css') }}">
+{% endblock %}
+
+{% block main %}
+    <h3 class="page-title">{{ question.title }}</h3>
+    <p class="question-info">
+        <span>author: {{ question.author.username }}</span>
+        <span>time: {{ question.create_time }}</span>
+    </p>
+    <hr>
+    <p class="question-content">{{ question.content | safe}}</p>
+    <hr>
+    <div class="control">
+        {#   通过过滤器中带的length函数，从而获得command的个数/长度 #}
+        <h4 >Command ({{ question.commands | length }}):</h4>
+        <form action="{{ url_for('command') }}" method="POST">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Please type commend..." name="command">
+
+    {#                用一个type为hidden的input,将input隐藏起来，同时给予名字为question_id和value为question.id。#}
+    {#                这样更方便后台提取question的id信息。#}
+                    <input type="hidden" name="question_id" value="{{ question.id }}">
+                </div>
+                <div class="form-group" style="text-align: right">
+                    <button class="btm btn-primary">Command</button>
+                </div>
+        </form>
+        <ul class="command-list">
+            {% for command in question.commands %}
+                <li>
+                    <div class="user-info">
+                        <img class = 'avatar' src="{{ url_for('static', filename = 'img/7dc3c78d-edf1-4827-b6d4-9043638f8024.jpg') }}" alt="">
+                        <span class="user-name">{{ command.author.username }}</span>
+                        <span class="create-time">{{ command.create_time }}</span>
+                    </div>
+                <p class="answer-content">{{ command.content }}</p></li>
+
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endblock %}

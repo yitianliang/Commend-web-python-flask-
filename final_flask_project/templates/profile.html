@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}profile{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/profile.css') }}">
+{% endblock %}
+
+{% block main %}
+
+    <div class="form_control">
+        <div class="row">
+            <div class="avatar-group"><img class="avatar" src="{{ url_for('static', filename = user.image_path) }}" alt=""></div>
+            <div class="user_info">
+                <div class="username">Username: {{ user.username }}</div>
+                <div class="create_time">telephone: {{ user.telephone }}</div>
+                <div class="post">Number of Post: {{ user.questions | length }}</div>
+                <div class="command">Number of Command: {{ user.commands | length }}</div>
+            </div>
+            <div class="info_change">
+                <div class="button_control">
+                    <div class="change_password">
+                        <button class="btn btn-primary" type="submit" onclick="location='{{ url_for('password') }}'">Change Password</button>
+                    </div>
+                    <div class="change_image">
+                        <button class="btn btn-primary" type="submit" onclick="location= '{{ url_for('image') }} '">Change image</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

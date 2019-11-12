@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}post{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/post.css') }}">
+{% endblock %}
+
+{% block main %}
+    <h3 class="page-title">Post Questions</h3>
+    <form action="" method="POST">
+        <div class="from-container">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Title" name = 'title'>
+            </div>
+            <div class="tinymce-group">
+                <textarea name="content" id="tinymce-content" placeholder="Content" rows="5"></textarea>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+    <script>
+        tinymce.init({
+        selector: '#tinymce-content'
+        });
+    </script>
+
+{% endblock %}

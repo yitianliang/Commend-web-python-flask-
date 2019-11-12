@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}image{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap-fileinput/4.4.6/css/fileinput.min.css"/>
+
+{% endblock %}
+
+{% block main %}
+
+<form class="avatar-input-form" method="POST" enctype="multipart/form-data">
+    <input name="image_upload" type="file" class="file" />
+</form>
+
+<script src="https://cdn.bootcss.com/bootstrap-fileinput/4.4.6/js/fileinput.min.js"></script>
+
+{% endblock %}
